@@ -1,0 +1,35 @@
+.status{
+  min-width: 97px;
+  //width: 75px;
+  min-height: 25px;
+  padding: 5px 15px;
+  font-size: 0.875rem;
+  font-weight: $font-medium;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &.new{
+    color: $sea-light;
+    background-color: rgba($sea-light, .21);
+  }
+  &.waiting{
+    color: $yellow;
+    background-color: rgba($yellow, .21);
+  }
+  &.pending{
+    color: $onyx;
+    background-color: rgba(#E1E2E3, .45);
+  }
+  &.rejected{
+    color: $danger;
+    background-color: rgba($danger, .21);
+  }
+  &.approved{
+    color: $oasis-light;
+    background-color: rgba($oasis-light, .21);
+  }
+  &.published{
+    color: $primary-purple;
+    background-color: rgba($primary-purple, .21);
+  }
+}

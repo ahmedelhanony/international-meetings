@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22.375" height="25.571" viewBox="0 0 22.375 25.571">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        clip-rule: evenodd;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        clip-path: url(#clip-path-2);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path id="Path_9564" data-name="Path 9564" class="cls-1" d="M32.414-164.214a4.5,4.5,0,0,1,4.711,4.262v4.262a4.5,4.5,0,0,1-4.711,4.262H14.75v-8.524a4.5,4.5,0,0,1,4.711-4.262Zm.164,2.131H19.3a2.286,2.286,0,0,0-2.415,2.131v6.393h15.7a2.286,2.286,0,0,0,2.415-2.131v-4.262A2.286,2.286,0,0,0,32.579-162.083ZM25.938-177a5.86,5.86,0,0,1,5.86,5.86,5.86,5.86,0,0,1-5.86,5.86,5.86,5.86,0,0,1-5.86-5.86A5.86,5.86,0,0,1,25.938-177Zm0,2.131a3.729,3.729,0,0,0-3.729,3.729,3.729,3.729,0,0,0,3.729,3.729,3.729,3.729,0,0,0,3.729-3.729A3.729,3.729,0,0,0,25.938-174.869Z" transform="translate(-14.75 177)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Path_9563" data-name="Path 9563" class="cls-2" d="M0-151.429H25.571V-177H0Z" transform="translate(0 177)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_10589" data-name="Group 10589" class="cls-3">
+    <g id="Group_10588" data-name="Group 10588" class="cls-4" transform="translate(-2.131)">
+      <path id="Path_9562" data-name="Path 9562" class="cls-2" d="M9.75-182H33.57v27.016H9.75Z" transform="translate(-8.341 181.278)"/>
+    </g>
+  </g>
+</svg>

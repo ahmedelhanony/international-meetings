@@ -1,0 +1,36 @@
+<div class="{{type}}">
+  <ng-container *ngFor="let item of listOfItems; let i = index">
+    <div class="item" *ngIf="i <= 1">
+          <span class="img-card circled-img x-small" *ngIf="item.image">
+                <img [src]="item.image" [alt]="item.name">
+          </span>
+      <span class="name font-12">
+                {{item.name}}
+          </span>
+    </div>
+  </ng-container>
+
+  <span class="text-color-onyx font-14 font-weight-medium cursor-pointer more" *ngIf="listOfItems.length > 2" [satPopoverAnchor]="tooltipOfItems"
+        (click)="tooltipOfItems.open()">
+        {{listOfItems.length - 2 !== 0 ? '+' + (listOfItems.length - 2) : ''}}
+      </span>
+  <sat-popover #tooltipOfItems horizontalAlign="center" verticalAlign="above" [hasBackdrop]="true">
+    <div class="repeated-list-container p-2">
+      <div class="d-flex justify-content-end close-list">
+        <button class="mat-close-modal" (click)="tooltipOfItems.close()">
+          <span class="sfi sfi-close text-color-black"></span>
+        </button>
+      </div>
+      <div class="repeated-list-item"
+           *ngFor="let item of listOfItems; let i = index; let last = last">
+            <span class="img-card circled-img small" *ngIf="item.image">
+                <img [src]="item.image" [alt]="item.name">
+            </span>
+        <span class="mx-1" *ngIf="item.image"></span>
+        <span class="name font-14 font-weight-medium">{{item.name}}</span>
+      </div>
+    </div>
+  </sat-popover>
+
+
+</div>

@@ -1,0 +1,19 @@
+:host{
+  ::ng-deep{
+    .mat-drawer-container{
+      overflow: visible;
+      .mat-drawer-content{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow: visible;
+
+        main{
+          //margin-top: 30px;
+          flex-grow: 1;
+        }
+      }
+    }
+
+  }
+}

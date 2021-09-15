@@ -1,0 +1,203 @@
+<div class="overflow-auto">
+  <table mat-table [dataSource]="dataSource" class="primary-table {{className}}">
+    <ng-container *ngFor="let column of columns; let i = index;">
+      <ng-container [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef [ngClass]="{'text-end' : columnsConfig[i].type === 'actions'}"> {{columnsConfig[i].label}} </th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container [ngSwitch]="columnsConfig[i].type">
+            <a [ngClass]="columnsConfig[i].type" [href]="element[column]" *ngSwitchCase="'link'">
+              {{ element[column] }}
+            </a>
+
+            <span class="d-inline-flex align-items-center" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'date'">
+              <span class="sfi sfi-clock text-color-coral"></span>
+              <span class="mx-2">
+                {{ element?.Date.from }}
+                <ng-container *ngIf="element?.Date.to">
+                : {{ element?.Date.to }}
+              </ng-container>
+              </span>
+            </span>
+
+            <div class="d-inline-flex align-items-center" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'sla'">
+              <app-sla [value]="element?.SLA.value" [maxValue]="element?.SLA.max" [canvasScale]="45" [outerLineColor]="getSlaColor(element?.SLA.value, element?.SLA.max)"></app-sla>
+            </div>
+
+            <div class="img-card table-img" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'image'">
+              <img [src]="element?.image" alt="">
+            </div>
+
+            <span class="{{ element[column].type }}" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'status'">
+              {{ element[column].label }}
+            </span>
+
+            <span class="{{ element[column].type }} {{ element[column] ? 'text-color-coral underline' : '' }}" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'number'">
+              {{ element[column] ? element[column] : '-' }}
+            </span>
+
+            <div class="text-nowrap d-flex align-items-center" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'group'">
+              <span >{{element?.Group.groupName}}</span>
+              <span class="mx-2"></span>
+              <app-repeated-list type="users-avatar" [listOfItems]="element?.Group.users"></app-repeated-list>
+            </div>
+
+            <div class="d-flex align-items-center" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'company'">
+              <span class="img-card circled-img">
+                <img [src]="element?.image" alt="">
+              </span>
+              <span class="mx-1"></span>
+              <span class="full-name">{{element[column]}}</span>
+            </div>
+
+
+
+            <div class="delegate d-flex align-items-center" [ngClass]="columnsConfig[i].type" *ngSwitchCase="'assigned'">
+              <div class="img-card x-small circled-img">
+                <img [src]="element?.AssignedTo.image" alt="">
+              </div>
+              <span class="mx-1"></span>
+              <span class="font-14 font-weight-medium text-color-onyx">{{element?.AssignedTo.name}}</span>
+              <span class="sfi sfi-close text-color-coral"></span>
+            </div>
+
+
+            <div class="d-flex " *ngSwitchCase="'statusAction'">
+              <div class="table-action" *ngIf="element[column] === 'new'">
+                <button mat-flat-button class="btn button-oasis-light px-3" type="button">
+                  Accept
+                </button>
+                <span class="mx-1"></span>
+                <button mat-flat-button class="btn button-white px-3" type="button" (click)="decline()">
+                  Decline
+                </button>
+                <span class="mx-1"></span>
+                <button mat-flat-button class="btn button-secondary-purple" type="button" (click)="delegate()">
+                  <span class="sfi sfi-share-o"></span>
+                </button>
+              </div>
+
+              <span class="status approved" *ngIf="element[column] === 'approved'">
+                Accepted
+              </span>
+
+              <span class="status rejected" *ngIf="element[column] === 'rejected'">
+                Declined
+              </span>
+
+              <div class="delegated" *ngIf="element[column] === 'delegated'">
+                <span class="font-12 text-color-secondary-purple">Delegate to</span>
+                <div class="d-flex align-items-center">
+                  <div class="img-card circled-img xx-small">
+                    <img [src]="element?.delegatedTo.image" alt="">
+                  </div>
+                  <span class="font-12 font-weight-medium mx-1">{{element?.delegatedTo.name}}</span>
+                </div>
+              </div>
+
+            </div>
+
+
+            <ng-container *ngSwitchCase="'actions'">
+              <div class="d-flex justify-content-end mx-n2">
+                <ng-container *ngFor="let action of element[column]">
+
+                  <span class="sent font-17 font-weight-medium mx-2" *ngIf="action === 'sent'">Sent </span>
+
+                  <div class="delegate d-flex align-items-center" *ngIf="action === 'delegate'">
+                    <div class="img-card x-small circled-img">
+                      <img src="assets/images/user-1.png" alt="">
+                    </div>
+                    <span class="mx-1"></span>
+                    <span class="font-14 font-weight-medium text-color-onyx">Ahmed Elkaldy</span>
+                    <span class="sfi sfi-close text-color-coral"></span>
+                  </div>
+
+
+                  <button mat-stroked-button class="btn button-red mx-2" *ngIf="action === 'sent-back'">
+                    Send Back
+                  </button>
+
+
+                  <button mat-flat-button class="btn button-oasis-light mx-2" *ngIf="action === 'update'">
+                    Update
+                  </button>
+
+                  <button mat-flat-button class="btn button-oasis-light mx-2" *ngIf="action === 'approve'">
+                    Approve
+                  </button>
+
+                  <button mat-flat-button class="btn button-oasis-light mx-2" *ngIf="action === 'publish'">
+                    Publish
+                  </button>
+
+                  <button mat-flat-button class="btn button-primary mx-2" *ngIf="action === 'review'">
+                    Review
+                  </button>
+
+                  <button mat-flat-button class="btn button-primary mx-2" *ngIf="action === 'assign'">
+                    Assign
+                  </button>
+
+                  <button mat-stroked-button class="btn button-primary mx-2" *ngIf="action === 'reassign'">
+                    Reassign
+                  </button>
+
+                  <button mat-flat-button class="btn button-primary mx-2" *ngIf="action === 'resolved'">
+                    Resolved
+                  </button>
+
+                  <button mat-flat-button class="btn button-primary mx-2" *ngIf="action === 'feedback'">
+                    Feedback
+                  </button>
+
+
+                  <button mat-icon-button class="btn button-sea-light mx-2" *ngIf="action === 'download'">
+                    <span class="sfi sfi-download"></span>
+                  </button>
+
+                  <button mat-icon-button class="btn button-mid-gray mx-2" *ngIf="action === 'history'">
+                    <span class="sfi sfi-history-2 text-color-onyx"></span>
+                  </button>
+
+                  <button mat-icon-button class="btn button-sea-light mx-2" *ngIf="action === 'edit'">
+                    <span class="sfi sfi-pen"></span>
+                  </button>
+
+                  <button mat-icon-button class="btn button-primary mx-2" *ngIf="action === 'delete'">
+                    <span class="sfi sfi-trash-1"></span>
+                  </button>
+
+                  <button mat-icon-button class="btn button-mid-gray mx-2" [matMenuTriggerFor]="menuAction" *ngIf="action === 'all'">
+                    <span class="sfi sfi-dots text-color-onyx rotate-90"></span>
+                  </button>
+                  <mat-menu #menuAction="matMenu" xPosition="before">
+                    <button mat-menu-item class="text-color-dark-gray font-12 border-0 d-flex align-items-center">
+                      <span class="sfi sfi-history-2 font-14"></span>
+                      <span class="mx-2">History</span>
+                    </button>
+                    <button mat-menu-item class="text-color-dark-gray font-12 border-0 d-flex align-items-center">
+                      <span class="sfi sfi-pen font-14"></span>
+                      <span class="mx-2">Edit</span>
+                    </button>
+                    <button mat-menu-item class="text-color-dark-gray font-12 border-0 d-flex align-items-center">
+                      <span class="sfi sfi-trash-1 font-14"></span>
+                      <span class="mx-2">Delete</span>
+                    </button>
+                  </mat-menu>
+                </ng-container>
+              </div>
+            </ng-container>
+
+            <span class="text-nowrap" [ngClass]="columnsConfig[i].type" *ngSwitchDefault>
+              {{ element[column] }}
+            </span>
+          </ng-container>
+
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-between mb-2" *ngIf="showLabel">
+  <label class="form-label" >
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </label>
+  <span *ngIf="optional" class="font-14 fst-italic text-color-onyx">Optional </span>
+</div>
+<mat-form-field class="{{className}}">
+  <mat-label>
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </mat-label>
+  <span *ngIf="matPrefix" matPrefix class="sfi {{iconPrefixName}}"></span>
+  <label class="mat-form-content">
+    <input matInput [placeholder]="placeholder">
+  </label>
+  <span *ngIf="matSuffix && !tags" matSuffix class="sfi {{iconSuffixName}}"></span>
+  <button *ngIf="tags" mat-flat-button class="btn button-primary square x-small my-1" matSuffix>
+    <span class="sfi sfi-plus"></span>
+  </button>
+</mat-form-field>
+
+<ng-container *ngIf="tags">
+  <mat-chip-list class="primary-chip small">
+    <mat-chip *ngFor="let item of [1,2,3]">
+      <span class="font-12">Tag {{ item }}</span>
+      <mat-icon matChipRemove>close</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</ng-container>

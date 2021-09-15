@@ -1,0 +1,46 @@
+<div class="popup-container">
+  <div class="d-flex align-items-center justify-content-between" mat-dialog-title>
+    <h3 class="mb-0 font-24 font-md-20 font-weight-semi-bold">New Organization </h3>
+    <button class="mat-close-modal" matDialogClose>
+      <span class="sfi sfi-close text-color-black"></span>
+    </button>
+  </div>
+  <mat-dialog-content>
+    <div class="px-md-3">
+      <form autocomplete="off" class="row g-3">
+        <div class="col-12">
+          <app-input label="Organization name" className="small-input"></app-input>
+        </div>
+        <div class="col-12">
+          <app-input label="URL" className="small-input"></app-input>
+        </div>
+        <div class="col-md-6">
+          <app-input label="Contact Person" className="small-input"></app-input>
+        </div>
+        <div class="col-md-6">
+          <app-input label="Email" className="small-input"></app-input>
+        </div>
+        <div class="col-12 my-3">
+          <app-custom-autocomplete className="small-input" [data]="users" label="Category" [showAddBtn]="true" (openDialog)="addGroup()"></app-custom-autocomplete>
+        </div>
+        <div class="col-12 mt-3">
+          <app-textarea label="Description" className="primary-form custom-textarea bordered h-95"></app-textarea>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="default-footer">
+    <div class="d-flex flex-md-row flex-column align-items-center justify-content-between w-100">
+      <button mat-flat-button class="btn button-transparent px-md-0 m-width-auto">
+        <span class="text-color-red">Delete Organization </span>
+      </button>
+
+      <div class="d-flex justify-content-md-end justify-content-center w-100">
+        <button mat-stroked-button class="btn button-primary" matDialogClose>Cancel</button>
+        <span class="mx-2"></span>
+        <button mat-flat-button class="btn button-primary">Save</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+
+</div>

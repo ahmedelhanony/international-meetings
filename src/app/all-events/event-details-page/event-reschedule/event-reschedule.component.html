@@ -1,0 +1,63 @@
+<div class="popup-container">
+  <div class="d-flex align-items-center" mat-dialog-title>
+    <h3 class="mb-0 font-24 font-md-20 font-weight-semi-bold flex-grow-1">Reschedule Event</h3>
+    <button class="mat-close-modal" matDialogClose>
+      <span class="sfi sfi-close text-color-black"></span>
+    </button>
+  </div>
+  <mat-dialog-content>
+    <div class="px-md-3">
+      <form autocomplete="off" class="row">
+        <div class="col-md-4">
+          <label class="form-label mb-1">Start date</label>
+          <mat-form-field class="primary-form gray-input small-input">
+            <mat-label>Choose a date</mat-label>
+            <label class="mat-form-content">
+              <input matInput [matDatepicker]="picker1" readonly>
+
+            </label>
+            <mat-datepicker-toggle matSuffix [for]="picker1">
+              <i class="sfi sfi-calendar-o text-color-dark-gray font-18" matDatepickerToggleIcon></i>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-md-4">
+          <label class="form-label mb-1">End date</label>
+          <mat-form-field class="primary-form gray-input small-input">
+            <mat-label>Choose a date</mat-label>
+            <label class="mat-form-content">
+              <input matInput [matDatepicker]="picker4" readonly>
+
+            </label>
+            <mat-datepicker-toggle matSuffix [for]="picker4">
+              <i class="sfi sfi-calendar-o text-color-dark-gray font-18" matDatepickerToggleIcon></i>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-md-6">
+          <label class="form-label mb-1">Time</label>
+          <div class="d-flex">
+            <app-time-picker className="small-input"></app-time-picker>
+            <span class="mx-3 h-40 d-inline-flex align-items-center">:</span>
+            <app-time-picker className="small-input"></app-time-picker>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="default-footer">
+    <div class="d-flex align-items-center justify-content-center w-100">
+      <button mat-stroked-button class="btn button-primary" matDialogClose>Cancel</button>
+      <span class="mx-2"></span>
+      <button mat-flat-button class="btn button-primary">Reschedule  </button>
+    </div>
+  </mat-dialog-actions>
+
+</div>

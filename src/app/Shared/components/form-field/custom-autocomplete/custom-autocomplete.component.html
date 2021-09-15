@@ -1,0 +1,106 @@
+<div class="d-flex justify-content-between mb-2" *ngIf="showLabel">
+  <label class="form-label" >
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </label>
+  <span *ngIf="optional" class="font-14 fst-italic text-color-onyx">Optional </span>
+</div>
+<div class="d-flex">
+  <mat-form-field class="primary-form gray-input {{className}}">
+    <mat-label>{{label}}</mat-label>
+    <span class="sfi sfi-search text-color-dark-gray font-18" matPrefix></span>
+    <label class="mat-form-content ">
+      <input
+        [placeholder]="placeholder"
+        aria-label="Category"
+        matInput
+        name="Category"
+        autocomplete="off"
+        [matAutocomplete]="auto" [formControl]="dataControl">
+
+    </label>
+    <span class="sfi sfi-arrow text-color-onyx font-15" matSuffix></span>
+    <mat-autocomplete #auto="matAutocomplete">
+      <ng-container *ngIf="!multiSelect">
+        <mat-option class="selected-one" *ngFor="let item of filteredItems | async" [value]="item.name">
+          <span class="radio"></span>
+          <span class="mx-3">{{ item.name }}</span>
+        </mat-option>
+      </ng-container>
+
+      <ng-container *ngIf="multiSelect">
+        <mat-option *ngFor="let item of filteredItems | async" [value]="selectedItems">
+          <div (click)="optionClicked($event, item)">
+            <mat-checkbox class="secondary-checkbox" [checked]="item.selected" (change)="toggleSelection(item)" (click)="$event.stopPropagation()">
+              <div class="d-flex justify-content-between">
+                {{ item.name }}
+
+                <div class="users-avatar" *ngIf="item.userImage.length">
+                  <ng-container *ngFor="let imageItem of item.userImage; let i = index">
+                    <div class="item" *ngIf="i <= 1">
+                    <span class="img-card circled-img x-small">
+                      <img [src]="imageItem" alt="user" />
+                    </span>
+                    </div>
+                  </ng-container>
+                  <span class="text-color-onyx font-14 font-weight-medium cursor-pointer more" *ngIf="item.userImage.length > 1">
+                  {{item.userImage.length - 2 !== 0 ? '+' + (item.userImage.length - 2) : ''}}
+                </span>
+                </div>
+              </div>
+            </mat-checkbox>
+          </div>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+
+  </mat-form-field>
+  <span class="mx-2" *ngIf="showAddBtn"></span>
+  <button mat-stroked-button class="btn button-primary {{className}}" *ngIf="showAddBtn" (click)="emitOpenDialog()">
+    <span class="sfi sfi-plus mx-1"></span>
+    <span class="mx-1">Add new</span>
+  </button>
+</div>
+
+<ng-container *ngIf="!usersList && !categories">
+  <mat-chip-list class="primary-chip small" *ngIf="selectedItems.length">
+    <mat-chip *ngFor="let item of selectedItems">
+      {{ item.name }}
+      <mat-icon matChipRemove>close</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</ng-container>
+
+<ng-container *ngIf="usersList && !categories">
+  <div class="row" *ngIf="selectedItems.length">
+    <div class="col-md-6">
+      <mat-list class="user-list">
+        <mat-list-item *ngFor="let item of selectedItems">
+          <ng-container *ngIf="item!.userImage">
+            <div class="img-card rounded-image small" >
+              <img [src]="item!.userImage[0]"
+                   onerror="this.onerror=null;this.src='assets/images/user.svg';"
+                   [alt]="item.name">
+            </div>
+          </ng-container>
+          <div mat-line class="mx-3 font-weight-medium-imp">{{item.name}}</div>
+          <button mat-icon-button class="btn button-primary x-small" type="button"><span class="sfi sfi-trash-1"></span></button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="categories">
+  <mat-list class="category-list" *ngIf="selectedItems.length">
+    <mat-list-item *ngFor="let item of selectedItems">
+      <div class="d-flex align-items-center flex-grow-1">
+        <span class="truncate-name" *ngIf="showTruncate">{{truncateName(item.name)}}</span>
+        <div mat-line class="font-weight-medium-imp" [ngClass]="{'mx-2': showTruncate}">{{item.name}}</div>
+      </div>
+      <button mat-icon-button class="btn button-primary x-small" type="button"><span class="sfi sfi-trash-1"></span></button>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
+

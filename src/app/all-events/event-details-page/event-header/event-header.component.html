@@ -1,0 +1,79 @@
+<header class="page-header">
+  <div class="row">
+    <div class="col-md-9 px-md-3">
+      <h1 class="font-24 font-md-20 font-weight-bold text-color-white mb-2">Event  Name Here</h1>
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="mb-2">
+          <span class="sfi sfi-location-o"></span>
+          <span class="font-12 mx-2">Mursalat building twelve 2 floor</span>
+        </div>
+        <div class="mb-2">
+          <span class="sfi sfi-clock-1"></span>
+          <span class="font-12 mx-2">Feb24, 2021 / 01:00 -02:00</span>
+        </div>
+        <div class="mb-2">
+          <span class="sfi sfi-building-1"></span>
+          <span class="font-12 mx-2">OrgName here</span>
+        </div>
+      </div>
+      <div class="mb-2">
+        <app-repeated-list type="categories" [listOfItems]="categories"></app-repeated-list>
+      </div>
+
+      <div class="text-nowrap d-flex align-items-center mb-md-0 mb-2">
+        <span class="font-14 font-weight-medium">Board</span>
+        <span class="mx-2"></span>
+        <app-repeated-list type="users-avatar" [listOfItems]="usersAvatar"></app-repeated-list>
+      </div>
+    </div>
+    <div class="col-md-3 ">
+      <div class="header-actions d-flex justify-content-md-end flex-wrap">
+        <button mat-flat-button class="btn button-oasis-light px-3" type="button">
+          Accept
+        </button>
+        <button mat-flat-button class="btn button-white px-3" type="button" (click)="decline()">
+          Decline
+        </button>
+        <button mat-flat-button class="btn button-secondary-purple delegate-btn" type="button" (click)="delegate()">
+          <span class="sfi sfi-share-o"></span>
+        </button>
+
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="btn button-transparent menu">
+          <mat-icon class="text-color-white">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before" yPosition="below" class="actions-menu">
+          <button mat-menu-item (click)="editEvent()">
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="reschedule()">
+            <span>Reschedule </span>
+          </button>
+          <button mat-menu-item>
+            <span class="text-color-red" (click)="cancel()">Cancel </span>
+          </button>
+        </mat-menu>
+
+
+        <span class="status approved">Accepted</span>
+
+        <span class="status rejected">Declined</span>
+
+        <div class="event-timer">
+          <div class="item">
+            <span class="font-15 font-weight-medium">02</span>
+            <span class="font-9 font-weight-light">HRS</span>
+          </div>
+          <div class="item">
+            <span class="font-15 font-weight-medium">14</span>
+            <span class="font-9 font-weight-light">MINS</span>
+          </div>
+          <div class="item">
+            <span class="font-15 font-weight-medium">55</span>
+            <span class="font-9 font-weight-light">SECS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

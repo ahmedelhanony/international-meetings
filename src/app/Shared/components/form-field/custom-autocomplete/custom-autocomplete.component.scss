@@ -1,0 +1,9 @@
+.small-input{
+  &~.btn{
+    height: 41px;
+  }
+}
+
+:host{
+  flex-grow: 1;
+}

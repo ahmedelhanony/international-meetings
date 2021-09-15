@@ -1,0 +1,81 @@
+@import "src/assets/scss/variables";
+@import "~node_modules/bootstrap/scss/functions";
+@import "~node_modules/bootstrap/scss/variables";
+@import "~node_modules/bootstrap/scss/mixins";
+
+.main-card {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background-color: $off-white2;
+  position: relative;
+  @include media-breakpoint-down(sm){
+    flex-direction: column;
+  }
+  &.organizations{
+    cursor: pointer;
+    transition: all .3s linear;
+    &:hover{
+      box-shadow: 0 3px 10px rgba($onyx, 6%);
+    }
+  }
+  &.groups{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .card-icon{
+      min-width: 72px;
+      width: 72px;
+      height: 72px;
+      margin-bottom: .75rem;
+    }
+    .card-content {
+
+      h6 {
+        margin-bottom: .75rem;
+      }
+    }
+  }
+  .card-icon{
+    min-width: 47px;
+    width: 47px;
+    height: 47px;
+
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-purple;
+    color: $white;
+    @include media-breakpoint-down(sm){
+      margin-bottom: .75rem;
+    }
+  }
+
+  .card-content{
+    display: flex;
+    flex-direction: column;
+    h6{
+      //line-height: 1;
+      margin-bottom: 0;
+    }
+    a{
+      color: $coral;
+      margin-bottom: 1rem;
+      &:hover{
+        text-decoration: underline;
+        color: $coral;
+      }
+    }
+  }
+
+  .card-actions{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+}

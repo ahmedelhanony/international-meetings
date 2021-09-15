@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-between mb-2" *ngIf="showLabel">
+  <label class="form-label" >
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </label>
+  <span *ngIf="optional" class="font-14 fst-italic text-color-onyx">Optional </span>
+</div>
+<mat-form-field class="cursor-pointer {{className}}" [satPopoverAnchor]="popover" (click)="popover.toggle()" >
+  <mat-label>
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </mat-label>
+  <label class="mat-form-content">
+    <input class="cursor-pointer" matInput placeholder="--:-- --" readonly="readonly" value="{{hourValue}}:{{minutesValue}}">
+  </label>
+  <span matSuffix class="sfi sfi-clock font-18 text-color-onyx"></span>
+</mat-form-field>
+
+
+<sat-popover #popover [hasBackdrop]="true" verticalAlign="below" horizontalAlign="start">
+    <div class="time-picker-wrapper">
+      <div class="time-picker-title">
+        <!-- <span class="mx-1"></span> -->
+        <span class="time-label">HH</span>
+        <span class="mx-1"></span>
+        <span  class="time-label">SS</span>
+      </div>
+        <div class="time-picker-body">
+          <!-- <mat-button-toggle-group #meridiemToggle="matButtonToggleGroup" value="--">
+            <mat-button-toggle value="--" class="d-none"></mat-button-toggle>
+            <mat-button-toggle *ngFor="let period of meridiem" [value]="period" (click)="choosePeriod(minut)">
+                {{period}}
+            </mat-button-toggle>
+          </mat-button-toggle-group> -->
+          <!-- <span class="mx-1"></span> -->
+          <mat-button-toggle-group #hoursToggle="matButtonToggleGroup" value="--" placeholder="Hours">
+            <mat-button-toggle value="--" class="d-none"></mat-button-toggle>
+            <mat-button-toggle *ngFor="let hour of hours" [value]="hour" (click)="chooseHour(hour)" [checked]="hour == hourValue">
+                <span class="font-14 font-weight-normal">{{hour}}</span>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+          <span class="mx-1"></span>
+          <mat-button-toggle-group #minutsToggle="matButtonToggleGroup" value="--" placeholder="Minutes">
+            <mat-button-toggle value="--" class="d-none"></mat-button-toggle>
+            <mat-button-toggle *ngFor="let minut of minutes" [value]="minut" (click)="chooseMinute(minut)" [checked]="minut == minutesValue">
+              <span class="font-14 font-weight-normal">{{minut}}</span>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+    </div>
+</sat-popover>

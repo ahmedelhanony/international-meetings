@@ -1,0 +1,93 @@
+@mixin gen-buttons($button-type) {
+  @each $color-name, $color in $root-colors {
+    &.button-#{"" + $color-name}{
+      border-color: $color;
+
+      @if $button-type == flat {
+
+        @if  $color-name == white {
+          color: $coral;
+        } @else {
+          color: $white;
+        }
+      }
+      @else if $button-type == square {
+        background-color: rgba($color, .2);
+        color: $color;
+
+      }
+      @else {
+        color: $color;
+      }
+      .mat-button-focus-overlay{
+        background-color: $color;
+        @if $button-type == square {
+          background-color: rgba($color, .3);
+        }
+      }
+      &:hover{
+
+        @if $button-type == flat{
+          color: $color;
+        }
+        @else if $button-type == square{
+          color: $color;
+        }
+        @else if  $color-name == white {
+          color: $coral;
+        }
+        @else {
+          color: $white;
+        }
+      }
+    }
+    //
+    //@if $button-type == stroked {
+    //  &.button-#{"" + $color-name}{
+    //    border-color: $color;
+    //    color: $color;
+    //    .mat-button-focus-overlay{
+    //      background-color: $color;
+    //    }
+    //    &:hover{
+    //      color: $white);
+    //      @if  $color-name == white {
+    //        color: $coral !important;
+    //      }
+    //
+    //    }
+    //  }
+    //}
+    //
+    //
+    //@else if $button-type == flat {
+    //  &.button-#{"" + $color-name}{
+    //    border-color: $color;
+    //    color: $white);
+    //    @if $color-name == white {
+    //      color: $coral !important;
+    //    }
+    //    .mat-button-focus-overlay{
+    //      background-color: $color;
+    //    }
+    //    &:hover{
+    //      color: $color;
+    //    }
+    //  }
+    //}
+    //
+    //
+    //@else if $button-type == square {
+    //  &.add{
+    //    background-color: rgba($oasis-light,.2);
+    //    color: $oasis-light;
+    //    .mat-button-focus-overlay{
+    //      background-color: rgba($oasis-light,.3);
+    //    }
+    //  }
+    //}
+
+  }
+}
+
+

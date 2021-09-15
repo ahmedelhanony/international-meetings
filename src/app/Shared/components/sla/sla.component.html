@@ -1,0 +1,13 @@
+<svg [attr.width]="canvasScale" [attr.height]="canvasScale">
+  <circle
+    fill="transparent"
+    [attr.cx]="canvasScale / 2" [attr.cy]="canvasScale / 2" [attr.r]="radius"
+     [attr.stroke]="innerLineColor" [attr.stroke-width]="innerLineWidth" />
+  <circle class="another-circle" fill="transparent" [attr.transform]="transform"
+          [attr.cx]="canvasScale / 2" [attr.cy]="canvasScale / 2" [attr.r]="radius"
+          [attr.stroke]="outerLineColor" [attr.stroke-width]="outerLineWidth"
+          [attr.stroke-dasharray]="strokeDasharray"
+          [attr.stroke-dashoffset]="strokeDashoffset"
+  />
+  <text [attr.x]="canvasScale / 2" [attr.y]="canvasScale / 2" text-anchor="middle" alignment-baseline="middle">{{maxValue}}/{{value}}</text>
+</svg>

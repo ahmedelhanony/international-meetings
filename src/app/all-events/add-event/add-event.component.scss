@@ -1,0 +1,14 @@
+@import "src/assets/scss/variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+:host{
+  ::ng-deep{
+    .mat-horizontal-content-container{
+      padding: 1rem 1.5rem;
+    }
+  }
+}
+
+

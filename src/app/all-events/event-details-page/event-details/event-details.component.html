@@ -1,0 +1,46 @@
+<div class="info-section">
+  <div class="info-item px-md-5">
+    <div class="name">Categories</div>
+    <div class="disc">
+      <app-repeated-list type="categories" [listOfItems]="categories"></app-repeated-list>
+    </div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Organization </div>
+    <div class="disc">Organization  Name</div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Targeted Group</div>
+    <div class="disc">
+      <div class="text-nowrap d-flex align-items-center mb-md-0 mb-2">
+        <span class="font-14 font-weight-medium">Board</span>
+        <span class="mx-2"></span>
+        <app-repeated-list type="users-avatar" [listOfItems]="usersAvatar"></app-repeated-list>
+      </div>
+    </div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Type </div>
+    <div class="disc">international</div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Location</div>
+    <div class="disc">Mursalat building twelve 2 floor</div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Google link</div>
+    <div class="disc">
+      <a href="https://goo.gl/map..." class="text-color-coral">https://goo.gl/map...</a>
+    </div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Date</div>
+    <div class="disc">Feb24, 2021  To Feb26, 2021 </div>
+  </div>
+  <div class="info-item px-md-5">
+    <div class="name">Tags</div>
+    <div class="disc">
+      <app-repeated-list type="categories" [listOfItems]="tags"></app-repeated-list>
+    </div>
+  </div>
+</div>

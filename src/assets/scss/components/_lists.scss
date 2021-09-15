@@ -1,0 +1,117 @@
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+}
+
+.dotted-list {
+  list-style: none;
+  margin-bottom: 0;
+  li {
+    display: flex;
+    align-items: baseline;
+    margin: 0 -5px 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:before {
+      content: "";
+      min-width: 9px;
+      height: 9px;
+      background-color: $coral;
+      margin: 0 5px;
+    }
+  }
+  &.gray-dot {
+    li {
+      &:before {
+        background-color: $light-gray;
+      }
+    }
+  }
+  &.dark-gray-dot {
+    li {
+      &:before {
+        background-color: $dark-gray;
+      }
+    }
+  }
+}
+
+
+.user-list, .category-list{
+  .mat-list-item{
+    height: 66px !important;
+    background-color: $light-gray;
+    margin-bottom: 1.5rem;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .img-card{
+      order: -1;
+    }
+  }
+}
+
+.category-list{
+  display: grid !important;
+  grid-gap: 1rem;
+  margin-bottom: 1.5rem !important;
+  grid-template-columns: repeat(3, 1fr);
+  @include media-breakpoint-down(md){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-breakpoint-down(sm){
+    grid-template-columns: 1fr;
+  }
+  .mat-list-item{
+    margin-bottom: 0;
+  }
+}
+
+
+.agenda-list{
+  &.inside{
+    .mat-list-item{
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      background-color: $off-white2;
+      border: 1px solid $silver;
+      height: 88px !important;
+      &:before{
+        position: relative;
+        left: auto;
+        right: auto;
+      }
+    }
+  }
+  .mat-list-item{
+    height: 66px !important;
+    background-color: $light-gray;
+    margin-bottom: 1.5rem;
+    cursor: move;
+
+    &:hover{
+      &:before{
+        opacity: 1;
+      }
+    }
+    &:before{
+      content: "\e928";
+      font-family: "stc-font-icons";
+      left: -1.5rem;
+      color: $dark-gray;
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: all .3s linear;
+      [dir=rtl] &{
+        left: auto;
+        right: -1.5rem;
+      }
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

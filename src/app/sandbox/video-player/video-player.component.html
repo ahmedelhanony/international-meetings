@@ -1,0 +1,51 @@
+<div class="hub-container">
+  <div class="general-box bg-color-white p-4 my-4">
+    <div class="video_container">
+      <video #videoPlayer (timeupdate)="mediaProgressChange($event)"
+        (durationchange)="mediaDuration($event)"
+      >
+        <source src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4" type="video/mp4">
+        <source src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.ogg" type="video/ogg">
+      </video>
+      <div class="video-controls">
+        <div class="progress-change d-flex align-items-center">
+          <mat-slider class="w-100"
+                      min="0" [max]="duration" [(ngModel)]="currentTimeValue" step="1" #progressChange
+                      (valueChange)="changeTime()"></mat-slider>
+          <span class="mx-2"></span>
+          <div class="d-flex align-items-center">
+            <span class="time">{{currentTimeValue > 9 ? currentTimeValue : "0"+currentTimeValue}}</span>
+            <span class="mx-1">/</span>
+            <span class="time">{{duration > 9 ? duration : "0"+duration}}</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mx-n2">
+          <div class="d-flex align-items-center flex-grow-1">
+            <button mat-icon-button class="btn button-transparent mx-2" (click)="playPause($event)">
+              <span class="sfi sfi-media-{{ isPlaying ? 'pause' : 'play' }}" *ngIf="mediaEnded == false"></span>
+              <span class="sfi sfi-refresh" *ngIf="mediaEnded"></span>
+            </button>
+
+            <button mat-icon-button class="btn button-transparent mx-2" (click)="muteUnmute()">
+              <span class="sfi sfi-{{ isMute ? 'media-mute' : 'volume-high' }}"></span>
+            </button>
+            <div class="volume-change mx-2">
+              <mat-slider
+                min="0" [(ngModel)]="volumeValue" max="1" step="0.01" #volumeChange (valueChange)="changeVolume()"></mat-slider>
+            </div>
+          </div>
+
+          <div class="mx-n2">
+            <button mat-icon-button class="btn button-transparent mx-2" (click)="pictureInPicture()">
+              <span class="sfi sfi-picture-in-picture"></span>
+            </button>
+            <button mat-icon-button class="btn button-transparent mx-2" (click)="fullScreen()">
+              <span class="sfi sfi-resize{{ fullscreen ?  '' : '-1'}}"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

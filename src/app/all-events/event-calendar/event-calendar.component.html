@@ -1,0 +1,89 @@
+<div class="px-4 pb-4">
+<!--  <div class="row">-->
+<!--    <div class="col-lg-3 pt-2 justify-content-center justify-content-md-start">-->
+<!--      <mat-checkbox class="secondary-checkbox">Upcoming Event</mat-checkbox>-->
+<!--    </div>-->
+<!--    <div class="col-lg-5 d-flex flex-md-row flex-column mt-2 mt-lg-0 align-items-center align-items-md-baseline justify-content-center">-->
+<!--      <mat-form-field class="primary-form gray-input small-input">-->
+<!--        <mat-label>Select</mat-label>-->
+<!--        <label class="mat-form-content">-->
+<!--          <mat-select disableOptionCentering [(ngModel)]="selectedView" (selectionChange)="changeView()" name="view">-->
+<!--            <mat-option *ngFor="let item of calendarViewList" [value]="item.value">-->
+<!--              {{item.viewValue}}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </label>-->
+<!--      </mat-form-field>-->
+<!--      <span class="mx-2"></span>-->
+<!--      <div class="d-flex">-->
+<!--        <button mat-flat-button class="btn button-transparent square" (click)="prev()">-->
+<!--          <span class="sfi sfi-arrow arrow-left font-24 text-color-coral"></span>-->
+<!--        </button>-->
+<!--        <span class="font-24 font-weight-medium mx-2 date-text" *ngIf="dateText !== ''">{{dateText}}</span>-->
+<!--        <button mat-flat-button class="btn button-transparent square" (click)="next()">-->
+<!--          <span class="sfi sfi-arrow arrow-right font-24 text-color-coral"></span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <button mat-stroked-button class="btn button-primary square mb-4 d-flex d-lg-none" (click)="openFilters()">
+    <span class="sfi sfi-filter"></span>
+  </button>
+  <div class="d-lg-flex d-none">
+    <app-event-calendar-filter class="d-block flex-grow-1" (changeView)="changeView($event)" (next)="next()" (prev)="prev()" [selectedView]="selectedView" [dateText]="dateText" [calendarViewList]="calendarViewList"></app-event-calendar-filter>
+  </div>
+  <full-calendar #calendar
+                 [deepChangeDetection]="true" [options]="calenderConfig"></full-calendar>
+
+
+  <sat-popover #popover [anchor]="anchor" [hasBackdrop]="true" [restoreFocus]="false" verticalAlign="below" horizontalAlign="start">
+    <div class="calendar-popover-container bg-color-white d-flex" [ngClass]="popoverClass">
+<!--       <span class="arrow"></span>-->
+      <div class="side-border"></div>
+      <div class="d-flex flex-column flex-grow-1 p-3">
+        <h1 class="font-17 font-weight-medium text-color-onyx mb-2">{{popoverContent?.title}}</h1>
+        <div class="d-flex flex-column">
+          <div class="mb-1">
+            <span class="sfi sfi-location-o text-color-coral font-14"></span>
+            <span class="font-12 mx-2">{{popoverContent?.location}}</span>
+          </div>
+          <div class="mb-1">
+            <span class="sfi sfi-clock-1 text-color-coral font-14"></span>
+            <span class="font-12 mx-2">{{popoverContent?.startDay}} / {{popoverContent?.startTime}} {{popoverContent?.endTime}}</span>
+          </div>
+          <div class="mb-2">
+            <span class="sfi sfi-building-1 text-color-coral font-14"></span>
+            <span class="font-12 mx-2">{{popoverContent?.orgName}}</span>
+          </div>
+        </div>
+        <div class="mb-2">
+          <app-repeated-list type="categories" [listOfItems]="categories"></app-repeated-list>
+        </div>
+
+        <div class="text-nowrap d-flex align-items-center">
+          <span class="font-14 font-weight-medium">Board</span>
+          <span class="mx-2"></span>
+          <app-repeated-list type="users-avatar" [listOfItems]="usersAvatar"></app-repeated-list>
+        </div>
+
+        <div class="popover-actions d-flex flex-wrap">
+          <button mat-flat-button class="btn button-oasis-light px-3" type="button">
+            Accept
+          </button>
+          <button mat-flat-button class="btn button-off-white px-3" type="button" (click)="decline()">
+            <span class="text-color-red">Decline</span>
+          </button>
+          <button mat-flat-button class="btn button-secondary-purple delegate-btn" type="button" (click)="delegate()">
+            <span class="sfi sfi-share-o"></span>
+          </button>
+
+          <span class="status approved">Accepted</span>
+
+          <span class="status rejected">Declined</span>
+        </div>
+
+      </div>
+    </div>
+  </sat-popover>
+
+</div>

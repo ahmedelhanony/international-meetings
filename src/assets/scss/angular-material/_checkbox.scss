@@ -1,0 +1,104 @@
+.mat-checkbox {
+
+  &.rounded{
+    .mat-checkbox-frame, .mat-checkbox-background {
+      border-radius: 50% !important;
+    }
+  }
+
+  &.dark-gray-checkbox{
+    .mat-checkbox-layout{
+      .mat-checkbox-frame {
+        border-color: $dark-gray !important;
+      }
+    }
+  }
+
+  .mat-checkbox-inner-container {
+    height: 25px;
+    width: 25px;
+    .mat-checkbox-frame {
+      border: 2px solid $silver;
+      border-radius: 0;
+    }
+    .mat-checkbox-background{
+      svg{
+        display: none;
+      }
+    }
+  }
+
+
+
+  &.mat-checkbox-checked {
+    .mat-checkbox-inner-container{
+      .mat-checkbox-frame{
+        border-color: $coral !important;
+      }
+      .mat-checkbox-background {
+        background-color: $coral !important;
+        transform: scale(.6);
+      }
+    }
+
+  }
+
+  .gray-checkbox.mat-checkbox-checked .mat-checkbox-frame {
+    border-color: $coral !important;
+  }
+
+  .mat-checkbox-checkmark-path {
+    stroke: $white !important;
+  }
+
+  &.secondary-checkbox{
+
+
+
+    .mat-checkbox-layout{
+      white-space: normal;
+      display: flex;
+      //align-items: flex-start;
+      .mat-checkbox-inner-container{
+        //margin: 0 auto;
+      }
+      .mat-checkbox-frame {
+        border-color: $light-gray;
+      }
+    }
+
+    &.mat-checkbox-checked {
+      .mat-checkbox-frame {
+        border-color: $coral !important;
+      }
+      .mat-checkbox-background {
+        background-color: $coral !important;
+        border: 2px solid transparent;
+        transform: scale(1);
+        border-radius: 0;
+
+        .mat-checkbox-checkmark {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+
+.mat-checkbox-indeterminate {
+  .mat-checkbox.mat-accent .mat-checkbox-frame {
+    border: 2px solid $coral;
+  }
+
+  .mat-checkbox-background {
+    background-color: $coral !important;
+    border-radius: 0 !important;
+  }
+
+  .mat-checkbox-mixedmark {
+    background-color: $white !important;
+  }
+}

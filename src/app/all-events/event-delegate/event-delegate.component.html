@@ -1,0 +1,29 @@
+<div class="popup-container">
+  <div class="d-flex align-items-center" mat-dialog-title>
+    <button class="mat-close-modal" matDialogClose>
+      <span class="sfi sfi-arrow text-color-dark-gray arrow-left"></span>
+    </button>
+    <span class="mx-1"></span>
+    <h3 class="mb-0 font-24 font-md-20 font-weight-semi-bold flex-grow-1">Delegate Event</h3>
+    <button class="mat-close-modal" matDialogClose>
+      <span class="sfi sfi-close text-color-black"></span>
+    </button>
+  </div>
+  <mat-dialog-content>
+    <div class="px-md-3">
+      <form autocomplete="off" class="row">
+        <div class="col-12 my-3">
+          <app-custom-autocomplete [data]="users" [usersList]="true" label="Delegate to" [showAddBtn]="false"></app-custom-autocomplete>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="default-footer">
+    <div class="d-flex align-items-center justify-content-center w-100">
+      <button mat-stroked-button class="btn button-primary" matDialogClose>Cancel</button>
+      <span class="mx-2"></span>
+      <button mat-flat-button class="btn button-primary">Delegate </button>
+    </div>
+  </mat-dialog-actions>
+
+</div>

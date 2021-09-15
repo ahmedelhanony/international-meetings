@@ -1,0 +1,23 @@
+@import "src/assets/scss/variables";
+
+.repeated-list-container{
+  width: 280px;
+  max-height: 280px;
+  overflow: auto;
+  background-color: $white;
+  border: 1px solid $light-gray2;
+  box-shadow: 10px 10px 26px rgba($black, 13%);
+  .close-list{
+    position: sticky;
+    top: 0;
+  }
+  .repeated-list-item{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid $light-gray2;
+    &:last-child{
+      border-bottom: 0;
+    }
+  }
+}

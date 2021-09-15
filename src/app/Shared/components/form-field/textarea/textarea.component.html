@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between mb-2" *ngIf="showLabel">
+  <label class="form-label" >
+    {{label}}
+    <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+  </label>
+  <span *ngIf="optional" class="font-14 fst-italic text-color-onyx">Optional </span>
+</div>
+<mat-form-field class="primary-form custom-textarea {{className}}">
+  <label class="mat-form-content">
+    <textarea [placeholder]="placeholder" matInput></textarea>
+  </label>
+</mat-form-field>

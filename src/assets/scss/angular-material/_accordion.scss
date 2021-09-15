@@ -1,0 +1,182 @@
+.primary-accordion {
+  .mat-expansion-panel{
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    border: 0;
+    .mat-expansion-panel-header{
+      height: 55px !important;
+      background-color: $light-gray !important;
+      border-radius: 0;
+      @include media-breakpoint-down(md){
+        padding: 0 12px;
+      }
+      .mat-content{
+        align-items: center;
+      }
+      .panel-title{
+        min-width: 40%;
+        width: 40%;
+        // @include media-breakpoint-down(md){
+        //   width: 55%;
+        // }
+      }
+      .panel-user-status{
+        min-width: 60%;
+        width: 60%;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // @include media-breakpoint-down(md){
+        //   width: 45%;
+        // }
+        .panel-user{
+          display: flex;
+          align-items: center;
+          .img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid $off-white;
+            @include media-breakpoint-down(md){
+              min-width: 20px;
+              width: 20px;
+              height: 20px;
+            }
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .panel-title{
+        color: #3C0666;
+      }
+
+      .panel-user-name{
+        color: $onyx;
+      }
+
+      .status{
+        height: 29px;
+        padding: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.875rem;
+        font-weight: $font-medium;
+        @include media-breakpoint-down(md){
+          font-size: 0.75rem;
+          height: 23px;
+        }
+        &.approved{
+          background-color: rgba($oasis-light, 27%);
+          color: $oasis-light;
+        }
+        &.rejected{
+          background-color: rgba($danger, 21%);
+          color: $danger;
+        }
+        &.in-progress{
+          background-color: rgba($yellow, 10%);
+          color: $yellow;
+        }
+        &.pending{
+          background-color: rgba(#DFE2E3, 24%);
+          color: $onyx;
+        }
+      }
+      .mat-expansion-indicator{
+        &:after{
+          color: $onyx !important;
+          border-width: 0 2px 2px 0 !important;
+          height: 12px;
+          width: 12px;
+          position: relative;
+          top: -5px;
+          @include media-breakpoint-down(md){
+            height: 2px;
+            width: 2px;
+          }
+        }
+      }
+      &.mat-expanded{
+        background-color: $primary-purple !important;
+        .panel-title, .panel-user-name{
+          color: $white !important;
+        }
+        .status{
+          &.pending{
+            color: $white;
+          }
+        }
+        .mat-expansion-indicator{
+          &:after{
+            color: $white !important;
+          }
+        }
+      }
+    }
+    .mat-expansion-panel-body{
+        padding: 24px !important;
+        border: 1px solid $light-gray !important;
+        border-radius: 0 0 4px 4px;
+        @include media-breakpoint-down(md){
+          padding: 12px !important;
+        }
+    }
+  }
+}
+
+.secondary-accordion{
+  .mat-expansion-panel{
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 0;
+    .mat-expansion-panel-header{
+      height: 55px !important;
+      background-color: $light-gray !important;
+      border-radius: 0;
+      @include media-breakpoint-down(md){
+        padding: 0 12px;
+      }
+      .mat-content{
+        align-items: center;
+      }
+
+      .mat-expansion-indicator{
+        &:after{
+          color: $onyx !important;
+          border-width: 0 2px 2px 0 !important;
+          height: 12px;
+          width: 12px;
+          position: relative;
+          top: -5px;
+          @include media-breakpoint-down(md){
+            height: 2px;
+            width: 2px;
+          }
+        }
+      }
+      &.mat-expanded{
+        background-color: $light-gray !important;
+      }
+    }
+    .mat-expansion-panel-body{
+      padding: 24px !important;
+      border: 0 !important;
+      border-radius: 0 0 4px 4px;
+      @include media-breakpoint-down(md){
+        padding: 12px !important;
+      }
+    }
+  }
+}
+

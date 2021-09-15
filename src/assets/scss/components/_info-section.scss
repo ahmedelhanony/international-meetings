@@ -1,0 +1,92 @@
+.info-section {
+  &.reverse {
+    .info-item {
+      background-color: $white;
+
+      &:nth-child(odd) {
+        background-color: $off-white;
+        .uploaded-file-item{
+          background-color: $white;
+          .uploaded-file-actions{
+            button{
+              background-color: $off-white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.no-bg {
+    .info-item {
+      background-color: $transparent !important;
+    }
+  }
+  &.full-width {
+    .info-item{
+      margin-bottom: 1rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .name{
+      line-height: 1;
+    }
+    .name,
+    .disc {
+      width: 100% !important;
+    }
+  }
+
+  &.full-line-colored{
+    .info-item:nth-of-type(4n+3), .info-item:nth-of-type(4n+3) + * {
+      background-color: $white;
+    }
+    .info-item:nth-of-type(4n+1), .info-item:nth-of-type(4n+1) + * {
+      background-color: $off-white;
+    }
+  }
+
+  .info-item {
+     padding: .75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $off-white;
+
+    &:nth-child(odd) {
+      background-color: $white;
+    }
+
+    >.name {
+      width: 200px;
+      font-size: 0.875rem;
+      font-weight: $font-medium;
+      color: $dark-gray;
+      margin-bottom: 0;
+    }
+
+    >.disc {
+      width: calc(100% - 200px);
+      font-size: 0.875rem;
+      font-weight: $font-medium;
+      color: $onyx;
+    }
+
+    @include media-breakpoint-down(md) {
+      >.name,
+      >.disc {
+        //font-size: 0.75rem;
+        width: 100% !important;
+      }
+       >.name {
+         margin-bottom: 10px;
+       }
+    }
+    @include media-breakpoint-down(sm) {
+      >.name,
+      >.disc {
+        //width: 100% !important;
+        //font-size: 0.75rem;
+      }
+    }
+  }
+}

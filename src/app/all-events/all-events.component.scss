@@ -1,0 +1,13 @@
+@import "src/assets/scss/variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+.page-view-container {
+  display: block;
+  margin-top: -48px;
+  @include media-breakpoint-up(lg) {
+    margin-top: -40px;
+  }
+}

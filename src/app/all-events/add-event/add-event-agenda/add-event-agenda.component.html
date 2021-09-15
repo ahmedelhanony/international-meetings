@@ -1,0 +1,27 @@
+<div class="p-4">
+
+  <h6 class="font-14 font-weight-bold">Add Topics </h6>
+  <mat-list class="agenda-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <mat-list-item *ngFor="let item of agendaItems" cdkDrag>
+      <div class="custom-placeholder" *cdkDragPlaceholder></div>
+      <div class="d-flex justify-content-between flex-grow-1">
+        <mat-form-field floatLabel="never" class="small-input">
+          <mat-label>{{item}}</mat-label>
+          <label class="mat-form-content">
+            <input matInput [value]="item">
+          </label>
+          <button mat-icon-button class="btn button-primary x-small my-2" type="button" matSuffix>
+            <span class="sfi sfi-trash-1"></span>
+          </button>
+        </mat-form-field>
+      </div>
+    </mat-list-item>
+  </mat-list>
+
+
+  <button mat-flat-button class="btn button-transparent px-md-0 m-width-auto">
+    <span class="sfi sfi-plus text-color-coral mx-1"></span>
+    <span class="text-color-coral mx-1">Add more </span>
+  </button>
+
+</div>

@@ -1,0 +1,75 @@
+<div class="py-3">
+  <div class="row g-3">
+    <div class="col-12 d-flex">
+      <app-input className="small-input" label="Board"></app-input>
+      <span class="mx-3"></span>
+      <app-color-picker label="Color" [colors]="colors"></app-color-picker>
+
+    </div>
+    <div class="col-12">
+      <app-custom-autocomplete className="small-input" label="Organization" [data]="organizations" [showAddBtn]="false"></app-custom-autocomplete>
+    </div>
+    <div class="col-12">
+      <app-textarea label="Description" className="bordered h-95" placeholder="Type Here"></app-textarea>
+    </div>
+    <div class="col-12">
+      <app-select label="Category" [showLabel]="true" className="primary-form gray-input small-input"></app-select>
+    </div>
+
+    <div class="col-12">
+      <app-custom-autocomplete className="small-input" label="Targeted Group" [data]="groups" (openDialog)="addGroup()"></app-custom-autocomplete>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label mb-1">Type </label>
+      <mat-button-toggle-group class="secondary-toggle" aria-label="Font Style">
+        <mat-button-toggle value="international">international</mat-button-toggle>
+        <mat-button-toggle value="Local">Local</mat-button-toggle>
+        <mat-button-toggle value="Virtual">Virtual</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="col-md-6 pt-3">
+      <app-input label="Location" className="small-input" placeholder="Location"></app-input>
+    </div>
+
+    <div class="col-md-6 pt-3">
+      <app-input label="Google Link" className="small-input" placeholder="Google Link"></app-input>
+    </div>
+
+
+    <div class="col-md-4">
+      <app-date-picker [showLabel]="true" label="Start date" className="primary-form gray-input small-input"></app-date-picker>
+    </div>
+
+
+    <div class="col-md-4">
+      <app-date-picker [showLabel]="true" label="End date" className="primary-form gray-input small-input"></app-date-picker>
+    </div>
+
+
+    <div class="col-md-6">
+      <label class="form-label">Time</label>
+      <div class="d-flex">
+        <app-time-picker className="small-input"></app-time-picker>
+        <span class="mx-3 h-40 d-inline-flex align-items-center">:</span>
+        <app-time-picker className="small-input"></app-time-picker>
+      </div>
+    </div>
+
+
+    <div class="col-12">
+      <app-input className="small-input" label="Board" [tags]="true"></app-input>
+    </div>
+
+
+    <div class="col-12 py-3">
+      <mat-slide-toggle class="reverse"><span class="font-14 font-weight-medium">Recurrence </span></mat-slide-toggle>
+    </div>
+
+
+    <div class="col-md-6">
+      <app-date-range-picker className="primary-form gray-input small-input"></app-date-range-picker>
+    </div>
+  </div>
+</div>

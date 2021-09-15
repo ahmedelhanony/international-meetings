@@ -1,0 +1,21 @@
+.main-sidenav{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 444px;
+  @include media-breakpoint-down(md){
+    width: 100vw;
+  }
+  .sidenav-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .sidenav-body{
+    flex-grow: 1;
+    overflow: auto;
+    padding: 1rem;
+    border-top: 1px solid rgba($light-gray, .46);
+  }
+}

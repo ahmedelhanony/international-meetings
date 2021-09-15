@@ -1,0 +1,18 @@
+<div class="color-toggled-component">
+  <div class="d-flex justify-content-between mb-2" *ngIf="showLabel">
+    <label class="form-label" >
+      {{label}}
+      <span *ngIf="tooltip" class="sfi sfi-question-1 text-color-onyx cursor-pointer" [matTooltip]="tooltip" matTooltipPosition="above"></span>
+    </label>
+  </div>
+  <div class="toggled-color" [ngStyle]="{'background-color': colorGroup.value}"
+       [matMenuTriggerFor]="menu"></div>
+  <mat-menu #menu="matMenu" class="colors-menu">
+    <mat-button-toggle-group #colorGroup="matButtonToggleGroup" class="color-btn-toggle" value="#FF375E">
+      <mat-button-toggle [value]="color" class="btn square" [ngStyle]="{'background-color': color}"
+                         aria-label="Text align left" *ngFor="let color of colors">
+
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-menu>
+</div>

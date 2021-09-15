@@ -1,0 +1,28 @@
+<div class="popup-container">
+  <div class="d-flex d-lg-none align-items-center justify-content-between" mat-dialog-title>
+    <button mat-dialog-close class="border-0 bg-color-transparent font-16 font-weight-medium text-color-onyx">
+      cancel
+    </button>
+    <h3 class="font-17 font-weight-medium text-color-onyx mb-0">filters</h3>
+    <button class="border-0 bg-color-transparent font-16 font-weight-medium text-color-coral" >apply</button>
+  </div>
+  <mat-dialog-content>
+    <div class="row">
+      <div class="col-lg-2 col-12">
+        <app-select label="Category" className="primary-form gray-input small-input"></app-select>
+      </div>
+      <div class="col-lg-2 col-12">
+        <app-select label="Type" className="primary-form gray-input small-input"></app-select>
+      </div>
+      <div class="col-lg-3 col-12">
+        <app-date-range-picker className="primary-form gray-input small-input"></app-date-range-picker>
+      </div>
+
+
+
+    </div>
+    <button mat-stroked-button class="btn button-primary d-lg-none d-flex px-5">
+      <span>Reset</span>
+    </button>
+  </mat-dialog-content>
+</div>

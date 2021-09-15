@@ -1,0 +1,42 @@
+<section class="hub-container-fluid">
+  <app-title-section title="All Events">
+    <div class="header-actions" action>
+      <button mat-stroked-button class="btn button-primary">
+        Export
+      </button>
+      <button mat-flat-button class="btn button-primary" (click)="addEvent()">
+        <span class="sfi sfi-plus mx-1"></span>
+        <span class="mx-1">New Event</span>
+      </button>
+    </div>
+  </app-title-section>
+  <div class="default-box">
+    <div class="pt-4 px-4">
+      <div class="row justify-content-end">
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-end mb-2 mb-lg-0">
+            <mat-button-toggle-group class="view-toggle" #pageView="matButtonToggleGroup" value="calendar">
+              <mat-button-toggle value="list">
+                <span class="sfi sfi-burger-menu-1 mx-1 font-14"></span>
+                <span class="mx-1">List</span>
+              </mat-button-toggle>
+              <mat-button-toggle value="calendar">
+                <span class="sfi sfi-calendar-o mx-1 font-14"></span>
+                <span class="mx-1">Calendar</span>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container [ngSwitch]="pageView!.value">
+      <div class="page-view-container" *ngSwitchCase="'list'">
+        <app-event-list></app-event-list>
+      </div>
+      <div class="page-view-container" *ngSwitchCase="'calendar'">
+        <app-event-calendar></app-event-calendar>
+      </div>
+    </ng-container>
+
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<div class="main-card {{className}}">
+  <div class="card-icon">
+    <span class="sfi {{iconName}} font-23"></span>
+  </div>
+  <span class="mx-2"></span>
+  <div class="card-content">
+    <h6 class="font-16 font-weight-bold">{{title}}</h6>
+    <a [href]="link" class="font-12" *ngIf="link" (click)="$event.stopPropagation()">{{link}}</a>
+    <app-repeated-list [type]="type" [listOfItems]="listOfItems"></app-repeated-list>
+  </div>
+  <div class="card-actions" (click)="$event.stopPropagation()">
+   <ng-content select="[action]"></ng-content>
+  </div>
+</div>
+

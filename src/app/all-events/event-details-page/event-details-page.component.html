@@ -1,0 +1,27 @@
+<section class="hub-container">
+  <div class="p-md-5">
+    <app-event-header></app-event-header>
+    <div class="page-details bg-color-white">
+      <mat-tab-group disableRipple class="primary-tab">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Event Details
+          </ng-template>
+          <app-event-details></app-event-details>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Event Agenda
+          </ng-template>
+          <app-event-agenda></app-event-agenda>
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Attachments
+          </ng-template>
+          <app-event-attachments></app-event-attachments>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>

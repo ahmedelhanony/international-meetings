@@ -1,0 +1,323 @@
+@import "src/assets/scss/variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+
+:host {
+  ::ng-deep{
+
+    .fc-toolbar.fc-header-toolbar {
+      display: none !important;
+      flex-wrap:wrap;
+      margin-bottom: 0;
+      @include media-breakpoint-down(md){
+        justify-content: center;
+        flex-direction: column-reverse;
+      }
+
+      .fc-toolbar-chunk{
+        > div{
+          display: flex;
+          align-items: center;
+          .fc-button {
+            background-color: transparent;
+            border-radius: 0;
+            border: 2px solid $coral;
+            color: $coral;
+            transition: all .3s;
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+              background-color: $coral;
+              color: $white;
+            }
+            .fc-icon{
+              width:100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        .fc-button-group {
+          .fc-button {
+            background-color: $light-gray;
+            border-color: $light-gray;
+            color: $onyx;
+            font-size: 1rem;
+            height:34px;
+            border-radius: 0;
+            line-height: 1;
+            margin: 0;
+            width: 80px;
+            box-shadow: none !important;
+            &:focus{
+              box-shadow: none;
+              outline: none;
+            }
+            &.fc-button-active{
+              background-color: $coral;
+              border-color: $coral;
+              color: $white;
+            }
+          }
+        }
+      }
+
+
+
+      h2 {
+        margin: 0 1.5rem;
+        line-height: 1;
+        width: 230px;
+        text-align: center;
+        @include media-breakpoint-down(md){
+          font-size: 1.2rem;
+          width: 180px;
+        }
+      }
+      .fc-center {
+        margin-bottom: 1.5em;
+
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+        }
+      }
+      .fc-right{
+        margin-bottom: 1.5rem;
+
+      }
+    }
+    .fc-view{
+
+      &.fc-timeGridWeek-view, &.fc-timeGridDay-view{
+        .fc-daygrid-body, .fc-timegrid-divider{
+          display: none;
+        }
+        .fc-timegrid-slot-label-frame{
+          text-align: start;
+          color: $silver;
+        }
+        .fc-timegrid-slot-lane, .fc-timegrid-slot-label{
+          border-color: $off-white2 !important;
+        }
+        //.fc-timegrid-slot-minor{
+        //  border: 0;
+        //}
+        .fc-timegrid-slot{
+          //border: 0;
+        }
+      }
+      .fc-day-today{
+        background-color: $white !important;
+      }
+
+      >table{
+        border: 1px solid $off-white;
+        border-collapse: collapse;
+        thead{
+          .fc-col-header{
+            th{
+              border: 0;
+              background-color: $off-white !important;
+              color: $dark-gray;
+              font-size: 1rem;
+              font-weight: $font-regular;
+              padding: 5px;
+              .fc-col-header-cell-cushion{
+                color: $dark-gray;
+                opacity: 1;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        tbody{
+
+          .fc-daygrid-day-frame{
+            max-height: 60px;
+            overflow: scroll;
+          }
+
+          .fc-daygrid-day{
+            background-color: $white;
+          }
+          .fc-daygrid-body{
+            .fc-daygrid-day{
+              border: 1px solid $off-white;
+              .fc-daygrid-day-number{
+                color: $onyx;
+                opacity: 1;
+                text-decoration: none;
+              }
+            }
+
+          }
+          .fc-event {
+            border-radius: 0;
+            background: $light-gray2;
+            margin: 5px 10px;
+            cursor: pointer;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            border: 0;
+            border-style: solid;
+            border-left-width: 5px;
+
+            [dir=rtl] & {
+              border-left-width: 0;
+              border-right-width: 5px;
+            }
+
+            &.pending {
+              border-color: $yellow;
+            }
+
+            &.confirmed {
+              //background-color: rgba($oasis-light, 0.33);
+              border-color: $oasis-light;
+            }
+
+            &.enrolled {
+              //background-color: rgba($coral, 0.33);
+              border-color: $coral;
+            }
+
+            .fc-daygrid-event-dot, .fc-event-time{
+              display: none;
+            }
+            .fc-event-title {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              padding: 0 10px;
+              font-weight: $font-medium;
+              font-size: 0.75rem;
+              color: $onyx;
+              background: $light-gray2;
+              display: flex;
+              align-items: center;
+              height: 100%;
+            }
+            &:hover {
+              opacity: 0.95;
+            }
+
+
+
+            .fc-time {
+              display: none;
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+  }
+}
+
+.primary-form{
+  width: 125px;
+}
+
+.date-text{
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+
+  .calendar-popover-container {
+    box-shadow: 0 1px 22px rgba($black, 7%);
+    //padding: 16px;
+    background: white;
+    max-width: 300px;
+    line-height: 28px;
+    border: 0;
+    border-style: solid;
+    border-left-width: 5px;
+    margin: 5px 0;
+
+    [dir=rtl] & {
+      border-left-width: 0;
+      border-right-width: 5px;
+    }
+
+    span.arrow {
+      position: absolute;
+      top: -10px;
+      margin: 0 45px;
+      //width: 40px;
+      height: 16px;
+      overflow: hidden;
+      //transform: translateX(50%);
+      width: 100%;
+
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        transform: rotate(45deg); /* Prefixes... */
+        top: 10px;
+        left: 4px;
+        box-shadow: 0 0 1px 0 #cccccc;
+      }
+    }
+
+
+    &.pending {
+      border-color: $yellow;
+    }
+
+    &.confirmed {
+      //background-color: rgba($oasis-light, 0.33);
+      border-color: $oasis-light;
+    }
+
+    &.enrolled {
+      //background-color: rgba($coral, 0.33);
+      border-color: $coral;
+    }
+
+    .popover-actions{
+      margin: 0 -.3rem;
+      .btn{
+        min-width: auto !important;
+        width: 77px !important;
+        height: 31px !important;
+        padding: 0 !important;
+        margin: .3rem;
+      }
+      .delegate-btn, .menu{
+        width: 31px !important;
+      }
+      .button-transparent{
+        padding: 0 1rem !important;
+      }
+      .status{
+        margin: 0 .3rem;
+        height: 31px !important;
+      }
+    }
+  }
+
+
+
+
+

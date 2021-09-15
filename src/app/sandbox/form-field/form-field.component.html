@@ -1,0 +1,406 @@
+<div class="container">
+  <div class="bg-color-white my-3 p-4">
+    <div class="row my-3">
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form gray-input">
+          <mat-label>Choose a date</mat-label>
+          <label class="mat-form-content">
+            <input matInput [matDatepicker]="picker" readonly>
+
+          </label>
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <i class="sfi sfi-calendar-o text-color-onyx font-22" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <label class="mat-form-content">
+            <input matInput [matDatepicker]="picker2" readonly>
+          </label>
+          <mat-datepicker-toggle matSuffix [for]="picker2">
+            <i class="si si-calendar-o text-color-onyx font-22" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form gray-input">
+          <mat-label>Input</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="test">
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form gray-input">
+          <mat-label>Outline form field</mat-label>
+          <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form gray-input">
+          <mat-label>Legacy form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Fill form field</mat-label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="gray-input" floatLabel="always">
+          <mat-label>Legacy form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Fill form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Select</mat-label>
+          <label class="mat-form-content">
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+          </label>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form gray-input">
+          <mat-label>Select</mat-label>
+          <label class="mat-form-content">
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 mb-3">
+        <mat-form-field class="primary-form custom-textarea gray-input">
+          <mat-label>Textarea</mat-label>
+          <label class="mat-form-content">
+            <textarea matInput></textarea>
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-color-off-white my-3 p-4">
+    <div class="row my-3">
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form">
+          <mat-label>Choose a date</mat-label>
+          <label class="mat-form-content">
+            <input matInput [matDatepicker]="picker3" readonly>
+
+          </label>
+          <mat-datepicker-toggle matSuffix [for]="picker3">
+            <i class="si si-calendar-o text-color-onyx font-22" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <label class="mat-form-content">
+            <input matInput [matDatepicker]="picker4" readonly>
+
+          </label>
+          <mat-datepicker-toggle matSuffix [for]="picker4">
+            <i class="si si-calendar-o text-color-onyx font-22" matDatepickerToggleIcon></i>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker4></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form">
+          <mat-label>Input</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="test">
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form">
+          <mat-label>Outline form field</mat-label>
+          <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form">
+          <mat-label>Legacy form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field floatLabel="always">
+          <mat-label>test <span class="sfi sfi-question-1 cursor-pointer" matTooltip="Info about the action"
+                                matTooltipPosition="above"></span></mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix >sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field floatLabel="always">
+          <mat-label>Legacy form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Fill form field</mat-label>
+          <label class="mat-form-content">
+            <input matInput placeholder="Placeholder">
+          </label>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field>
+          <mat-label>Select</mat-label>
+          <label class="mat-form-content">
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+          </label>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <mat-form-field class="primary-form">
+          <mat-label>Select</mat-label>
+          <label class="mat-form-content">
+            <mat-select>
+              <mat-option value="option">Option</mat-option>
+            </mat-select>
+          </label>
+        </mat-form-field>
+      </div>
+      <div class="col-md-12 mb-3">
+        <mat-form-field class="primary-form custom-textarea">
+          <mat-label>Textarea</mat-label>
+          <label class="mat-form-content">
+            <textarea matInput></textarea>
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--<div class="container">-->
+<!--  <div class="bg-color-off-white p-4 my-3">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-6 mb-4">-->
+<!--        <mat-form-field class="primary-form font-17" floatLabel="always">-->
+<!--          <mat-label></mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <input matInput placeholder="Placeholder">-->
+<!--          </label>-->
+<!--          <mat-hint>Hint</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-md-6 mb-4">-->
+<!--        <mat-form-field class="primary-form font-17">-->
+<!--          <mat-label>Outline form field</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>-->
+<!--            <input matInput placeholder="Placeholder">-->
+<!--            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--          </label>-->
+<!--          <mat-hint>Hint</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form font-17">-->
+<!--          <mat-label>Select me</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-select>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--            </mat-select>-->
+<!--          </label>-->
+<!--          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form font-17">-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-icon matPrefix>search</mat-icon>-->
+<!--            <input type="text"-->
+<!--                   placeholder="Pick one"-->
+<!--                   aria-label="Number"-->
+<!--                   matInput-->
+<!--                   [formControl]="myControl"-->
+<!--                   [matAutocomplete]="auto">-->
+<!--          </label>-->
+<!--          <mat-autocomplete #auto="matAutocomplete">-->
+<!--            <mat-option *ngFor="let option of options" [value]="option">-->
+<!--              {{option}}-->
+<!--            </mat-option>-->
+<!--          </mat-autocomplete>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form font-17">-->
+<!--          <mat-label>Choose a date</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <input matInput [matDatepicker]="picker">-->
+<!--            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--          </label>-->
+<!--          <mat-datepicker #picker></mat-datepicker>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-12 mb-4">-->
+<!--        <mat-form-field class="primary-form custom-textarea font-17">-->
+<!--          <mat-label>Leave a comment</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>-->
+<!--          </label>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="bg-color-white p-4 my-3">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-6 mb-4">-->
+<!--        <mat-form-field class="primary-form gray-input font-17">-->
+<!--          <mat-label></mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <input matInput placeholder="Placeholder">-->
+<!--          </label>-->
+<!--          <mat-hint>Hint</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-md-6 mb-4">-->
+<!--        <mat-form-field class="primary-form gray-input font-17">-->
+<!--          <mat-label>Outline form field</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>-->
+<!--            <input matInput placeholder="Placeholder">-->
+<!--            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+<!--          </label>-->
+<!--          <mat-hint>Hint</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form gray-input font-17">-->
+<!--          <mat-label>Select me</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-select>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--              <mat-option value="option">Option</mat-option>-->
+<!--            </mat-select>-->
+<!--          </label>-->
+<!--          <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form gray-input font-17">-->
+<!--          <label class="mat-form-content">-->
+<!--            <mat-icon matPrefix>search</mat-icon>-->
+<!--            <input type="text"-->
+<!--                   placeholder="Pick one"-->
+<!--                   aria-label="Number"-->
+<!--                   matInput-->
+<!--                   [formControl]="myControl"-->
+<!--                   [matAutocomplete]="auto">-->
+<!--          </label>-->
+<!--          <mat-autocomplete #auto="matAutocomplete">-->
+<!--            <mat-option *ngFor="let option of options" [value]="option">-->
+<!--              {{option}}-->
+<!--            </mat-option>-->
+<!--          </mat-autocomplete>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-6 mb-4">-->
+<!--        <mat-form-field class="primary-form gray-input font-17">-->
+<!--          <mat-label>Choose a date</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <input matInput [matDatepicker]="picker">-->
+<!--            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--          </label>-->
+<!--          <mat-datepicker #picker></mat-datepicker>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="col-12 mb-4">-->
+<!--        <mat-form-field class="primary-form custom-textarea font-17">-->
+<!--          <mat-label>Leave a comment</mat-label>-->
+<!--          <label class="mat-form-content">-->
+<!--            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>-->
+<!--          </label>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->

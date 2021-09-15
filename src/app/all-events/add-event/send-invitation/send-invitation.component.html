@@ -1,0 +1,23 @@
+<div class="popup-container">
+  <mat-dialog-content class="border-0">
+    <div class="px-3 pt-5 pb-4 text-center">
+      <img src="assets/images/direct.svg" alt="">
+      <h1 class="font-29 font-md-20 font-weight-medium text-color-onyx my-3">Are you sure to send this event invitation?</h1>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="default-footer p-4">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <button mat-stroked-button class="btn button-primary" matDialogClose>Discard</button>
+
+      <div class="d-flex justify-content-end w-100">
+        <button mat-stroked-button class="btn button-dark-gray square large" (click)="addEvent()" matDialogClose>
+          <span class="sfi sfi-arrow arrow-left"></span>
+        </button>
+        <span class="mx-2"></span>
+        <button mat-flat-button class="btn button-oasis-light" matDialogClose
+        >Send Invitation </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+
+</div>

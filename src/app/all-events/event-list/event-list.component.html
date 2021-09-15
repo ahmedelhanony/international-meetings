@@ -1,0 +1,12 @@
+<div class="px-4">
+  <button mat-stroked-button class="btn button-primary square mb-4 d-flex d-lg-none" (click)="openFilters()">
+    <span class="sfi sfi-filter"></span>
+  </button>
+  <div class="d-lg-flex d-none">
+    <app-event-list-filter class="d-block flex-grow-1"></app-event-list-filter>
+  </div>
+</div>
+
+<div>
+  <app-table-list [columnsConfig]="columnsConfig" [rows]="dataSource" [columns]="columns"></app-table-list>
+</div>

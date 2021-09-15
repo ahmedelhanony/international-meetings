@@ -1,0 +1,102 @@
+$font-thin: 100;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: bold;
+$font-extra-bold: 800;
+$font-family: 'STC_Forward';
+$font-icon: 'stc-font-icons';
+$font-size-base: 16;
+
+$black: #000000;
+$white: #FFFFFF;
+$coral: #FF375E;
+$silver: #DDE0E1;
+$onyx: #1D242D;
+$primary-purple: #4F008C;
+$secondary-purple: #A54EE1;
+$third-purple: #651F9A;
+$dark-purple: #370360;
+$oasis-light: #00C48C;
+$light-gray: #F3F3F1;
+$light-gray2: #F4F4F4;
+$mid-gray: #BBC8CE;
+$dark-gray: #8E9AA0;
+$off-white: #f9f9f9;
+$off-white2: #F8F8F8;
+$off-white3: #FDFDFC;
+$red: #CF2543;
+$warning: #FFDD40;
+$yellow: #FFBF00;
+$gold: #FFBF00;
+$sea-light: #1BCED8;
+$orange: #FF6A39;
+$transparent: transparent;
+
+
+$root-colors: (
+  black: #000000,
+  white: #FFFFFF,
+  primary: #FF375E,
+  coral: #FF375E,
+  silver: #DDE0E1,
+  onyx: #1D242D,
+  primary-purple: #4F008C,
+  secondary-purple: #A54EE1,
+  third-purple: #651F9A,
+  dark-purple: #370360,
+  oasis-light: #00C48C,
+  light-gray: #F3F3F1,
+  light-gray2: #F4F4F4,
+  mid-gray: #BBC8CE,
+  dark-gray: #8E9AA0,
+  off-white: #f9f9f9,
+  off-white2: #F8F8F8,
+  off-white3: #FDFDFC,
+  red: #CF2543,
+  warning: #FFDD40,
+  yellow: #FFBF00,
+  gold: #FFBF00,
+  sea-light: #1BCED8,
+  orange: #FF6A39,
+  transparent: transparent,
+);
+
+//@function hexToRGB($hex) {
+//  @return red($hex), green($hex), blue($hex);
+//}
+//
+//@mixin generate_colors($colors) {
+//  // Colors
+//  @each $color, $value in $colors {
+//    @if str-slice(#{$value}, 1, 1) == "#" {
+//      --#{$color}: #{$value};
+//    } @else {
+//      --#{$color}: var(--#{$value});
+//    }
+//  }
+//
+//  // RGB Colors
+//  @each $color, $value in $colors {
+//    @if str-slice(#{$value}, 1, 1) == "#" {
+//      --RGB_#{$color}: #{hexToRGB($value)};
+//    } @else {
+//      --RGB_#{$color}: var(--RGB_#{$value});
+//    }
+//  }
+//}
+//
+//:root{
+//  --font-thin: 100;
+//  --font-light: 300;
+//  --font-regular: 400;
+//  --font-medium: 500;
+//  --font-bold: bold;
+//  --font-extra-bold: 800;
+//  --font-family: 'STC_Forward';
+//  --font-size-base: 16;
+//
+//  @include generate_colors($root-colors);
+//}
+
+
